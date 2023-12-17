@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import Input from '../Input.jsx';
 
 export default function Create({onAddProject, onCancelProject}) {
     const title = useRef();
@@ -36,22 +37,9 @@ export default function Create({onAddProject, onCancelProject}) {
           Save
         </button>
       </div>
-      <label className="text-sm font-bold text-stone-500">TITLE</label>
-      <input
-       ref={title}
-        type="text"
-        className="block py-1 px-3 mb-3 w-full bg-stone-200 border-b-2 border-stone-300"
-      />
-      <label className="text-sm font-bold text-stone-500">DESCRIPTION</label>
-      <textarea
-       ref={description}
-        className="block py-1 px-3 mb-3 w-full bg-stone-200 border-b-2 border-stone-300" />
-      <label className="text-sm font-bold text-stone-500">DUE DATE</label>
-      <input
-       ref={dueDate}
-        type="date"
-        className="block py-1 px-3 mb-3 w-full bg-stone-200 border-b-2 border-stone-300"
-      />
+      <Input ref={title} type="text" label="Title" />
+      <Input ref={description} type="textarea" label="Description" />
+      <Input ref={dueDate} type="date" label="Due Date" />
     </form>
   );
 }
